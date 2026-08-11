@@ -1,0 +1,109 @@
+:root {
+  --bg: #fbf9f1;
+  --surface: #fbf9f1;
+  --surface-container: #f0eee6;
+  --primary: #645592;
+  --primary-container: #b8a7ea;
+  --primary-fixed: #e8ddff;
+  --secondary: #2c6950;
+  --secondary-fixed: #b0f0d0;
+  --tertiary: #7c5637;
+  --on-surface: #1b1c17;
+  --on-surface-variant: #48454f;
+  --outline: #797580;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--on-surface);
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button,
+a {
+  transition: all 0.25s ease;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.material-symbols-outlined.fill {
+  font-variation-settings: 'FILL' 1;
+}
+
+.sticker-shadow {
+  box-shadow: 4px 4px 0px 0px rgba(100, 85, 146, 0.15);
+}
+
+.pixel-border {
+  clip-path: polygon(
+    4px 0, calc(100% - 4px) 0,
+    100% 4px, 100% calc(100% - 4px),
+    calc(100% - 4px) 100%, 4px 100%,
+    0 calc(100% - 4px), 0 4px
+  );
+}
+
+.hover-lift {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 8px 8px 0px 0px rgba(100, 85, 146, 0.2);
+}
+
+.fade-slide-up {
+  animation: fadeSlideUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+
+@keyframes fadeSlideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fbf9f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e8ddff;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #cebdff;
+}
+
+@media (max-width: 768px) {
+  .mobile-stack {
+    flex-direction: column;
+  }
+}

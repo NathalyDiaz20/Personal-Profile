@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hikari Portfolio</title>
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              background: "#fbf9f1",
+              surface: "#fbf9f1",
+              primary: "#645592",
+              secondary: "#2c6950",
+              tertiary: "#7c5637",
+              "on-surface": "#1b1c17",
+              "on-surface-variant": "#48454f",
+              "surface-container": "#f0eee6",
+              "primary-fixed": "#e8ddff",
+              "secondary-fixed": "#b0f0d0"
+            }
+          }
+        }
+      };
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;700&family=Space+Mono:wght@700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body class="bg-background text-on-surface min-h-screen flex flex-col font-body-md">
+    <nav class="bg-surface/60 backdrop-blur-xl sticky top-0 z-50">
+      <div class="flex items-center justify-between max-w-6xl mx-auto px-4 py-4 md:px-8">
+        <a href="#" class="text-2xl font-bold text-primary">Nathaly</a>
+
+        <div class="hidden md:flex items-center gap-8 text-sm">
+          <a href="#" class="text-on-surface-variant hover:text-primary">Home</a>
+          <a href="#" class="text-primary border-b-2 border-primary pb-1">Hobbies</a>
+          <a href="#" class="text-on-surface-variant hover:text-primary">Music</a>
+          <a href="#" class="text-on-surface-variant hover:text-primary">Polyglot</a>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <button class="p-2 rounded-full bg-surface-container text-on-surface-variant" data-theme-toggle aria-label="Toggle theme">
+            <span class="material-symbols-outlined">palette</span>
+          </button>
+          <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary sticker-shadow">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80" alt="Profile" class="w-full h-full object-cover" />
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main class="flex-grow max-w-6xl mx-auto w-full px-4 py-12 md:px-8">
+      <section class="text-center max-w-2xl mx-auto fade-slide-up">
+        <h1 class="text-4xl md:text-6xl font-extrabold text-primary">My Digital Playground</h1>
+        <p class="mt-4 text-lg text-on-surface-variant">A curated collection of pixelated adventures, magical girl dreams, and cozy farm life escapes.</p>
+      </section>
+
+      <section class="grid grid-cols-1 md:grid-cols-12 gap-6 mt-12">
+        <article class="md:col-span-8 bg-surface-container rounded-2xl p-6 sticker-shadow hover-lift fade-slide-up delay-100">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <h2 class="text-2xl font-bold text-on-surface">Anime Adventures</h2>
+              <p class="mt-2 text-on-surface-variant">Current obsessions &amp; all-time favorites.</p>
+            </div>
+            <span class="bg-primary-fixed text-on-primary-fixed px-3 py-1 rounded-full text-xs font-bold uppercase pixel-border">LVL 99</span>
+          </div>
+
+          <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="relative overflow-hidden rounded-xl h-48">
+              <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=900&q=80" alt="Anime scene" class="w-full h-full object-cover" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent p-4 flex items-end">
+                <span class="bg-tertiary-fixed text-on-tertiary-fixed px-2 py-1 rounded text-xs uppercase font-bold">Mahou Shoujo</span>
+              </div>
+            </div>
+
+            <div class="relative overflow-hidden rounded-xl h-48">
+              <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=900&q=80" alt="Cozy lifestyle" class="w-full h-full object-cover" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent p-4 flex items-end">
+                <span class="bg-secondary-fixed text-on-secondary-fixed px-2 py-1 rounded text-xs uppercase font-bold">Slice of Life</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <aside class="md:col-span-4 bg-secondary-fixed rounded-2xl p-6 sticker-shadow hover-lift fade-slide-up delay-200">
+          <h2 class="text-2xl font-bold text-on-secondary-container">Stardew Valley</h2>
+          <p class="mt-2 text-on-secondary-container/80">Year 4, Autumn. Pelican Town.</p>
+          <div class="mt-6 flex justify-center">
+            <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=700&q=80" alt="Farm landscape" class="w-40 h-40 rounded-xl object-cover pixel-border" />
+          </div>
+        </aside>
+      </section>
+
+      <section class="mt-12 bg-primary-container rounded-2xl p-6 md:p-10 sticker-shadow hover-lift fade-slide-up delay-300">
+        <div class="flex flex-col md:flex-row items-center gap-8">
+          <div class="md:w-1/2">
+            <span class="bg-surface text-primary px-3 py-1 rounded-full text-xs font-bold uppercase">Support Main</span>
+            <h2 class="mt-4 text-3xl font-bold text-on-primary-container">League of Legends</h2>
+            <p class="mt-3 text-on-primary-container/80">Soft vibes on the Summoner's Rift. Shielding, healing, and occasionally stealing kills with sparkles.</p>
+          </div>
+          <div class="md:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+            <div class="bg-surface/80 rounded-xl p-4">
+              <h3 class="font-bold text-on-surface">Lux</h3>
+              <p class="text-sm text-on-surface-variant">Light Mage</p>
+            </div>
+            <div class="bg-surface/80 rounded-xl p-4">
+              <h3 class="font-bold text-on-surface">Yuumi</h3>
+              <p class="text-sm text-on-surface-variant">Magical Cat</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-surface-container border-t border-outline/20 mt-16">
+      <div class="max-w-6xl mx-auto px-4 py-8 md:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="text-lg font-bold text-tertiary">Nathaly</div>
+        <div class="text-sm text-on-surface-variant">© 2024 Nathaly Portfolio • Made with soft vibes</div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
