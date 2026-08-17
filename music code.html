@@ -1,0 +1,461 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Hikari - Music</title>
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&amp;family=Plus+Jakarta+Sans:wght@700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "on-tertiary-fixed-variant": "#6b3b00",
+                "on-error-container": "#93000a",
+                "surface-container": "#efedf6",
+                "tertiary-fixed": "#ffdcc0",
+                "secondary-container": "#fd92c0",
+                "on-secondary": "#ffffff",
+                "inverse-surface": "#2f3037",
+                "secondary-fixed": "#ffd9e5",
+                "surface-container-highest": "#e3e1eb",
+                "on-surface-variant": "#454653",
+                "on-primary-fixed-variant": "#243aa7",
+                "on-secondary-fixed-variant": "#7a2751",
+                "tertiary": "#8a5110",
+                "error-container": "#ffdad6",
+                "primary": "#4054c0",
+                "on-primary-container": "#00208f",
+                "on-tertiary-fixed": "#2d1600",
+                "on-secondary-fixed": "#3d0023",
+                "on-background": "#1a1b22",
+                "primary-fixed": "#dee0ff",
+                "surface-tint": "#4054c0",
+                "error": "#ba1a1a",
+                "outline-variant": "#c5c5d5",
+                "on-surface": "#1a1b22",
+                "surface-container-lowest": "#ffffff",
+                "surface-container-low": "#f4f2fc",
+                "surface-bright": "#fbf8ff",
+                "on-primary-fixed": "#00105a",
+                "on-primary": "#ffffff",
+                "secondary-fixed-dim": "#ffb0cf",
+                "secondary": "#983f69",
+                "tertiary-container": "#ce8945",
+                "outline": "#757684",
+                "on-tertiary": "#ffffff",
+                "background": "#fbf8ff",
+                "inverse-on-surface": "#f1eff9",
+                "on-tertiary-container": "#4b2800",
+                "on-error": "#ffffff",
+                "primary-fixed-dim": "#bac3ff",
+                "tertiary-fixed-dim": "#ffb875",
+                "inverse-primary": "#bac3ff",
+                "on-secondary-container": "#792650",
+                "surface-dim": "#dad9e2",
+                "surface-container-high": "#e9e7f1",
+                "primary-container": "#7c90ff",
+                "surface-variant": "#e3e1eb",
+                "surface": "#fbf8ff"
+        },
+        "borderRadius": {
+                "DEFAULT": "1rem",
+                "lg": "2rem",
+                "xl": "3rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "stack-gap-sm": "8px",
+                "container-margin": "24px",
+                "gutter": "16px",
+                "unit": "8px",
+                "stack-gap-lg": "32px",
+                "stack-gap-md": "16px"
+        },
+        "fontFamily": {
+                "headline-md": [
+                        "Plus Jakarta Sans"
+                ],
+                "display-lg": [
+                        "Plus Jakarta Sans"
+                ],
+                "label-md": [
+                        "Be Vietnam Pro"
+                ],
+                "headline-lg-mobile": [
+                        "Plus Jakarta Sans"
+                ],
+                "body-md": [
+                        "Be Vietnam Pro"
+                ],
+                "headline-lg": [
+                        "Plus Jakarta Sans"
+                ],
+                "body-lg": [
+                        "Be Vietnam Pro"
+                ],
+                "label-sm": [
+                        "Be Vietnam Pro"
+                ]
+        },
+        "fontSize": {
+                "headline-md": [
+                        "24px",
+                        {
+                                "lineHeight": "32px",
+                                "fontWeight": "700"
+                        }
+                ],
+                "display-lg": [
+                        "48px",
+                        {
+                                "lineHeight": "56px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "800"
+                        }
+                ],
+                "label-md": [
+                        "14px",
+                        {
+                                "lineHeight": "20px",
+                                "letterSpacing": "0.01em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-lg-mobile": [
+                        "28px",
+                        {
+                                "lineHeight": "36px",
+                                "fontWeight": "700"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-lg": [
+                        "32px",
+                        {
+                                "lineHeight": "40px",
+                                "fontWeight": "700"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "28px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "label-sm": [
+                        "12px",
+                        {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.03em",
+                                "fontWeight": "700"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined[data-weight="fill"] {
+            font-variation-settings: 'FILL' 1;
+        }
+
+        /* Custom Animations & Styles based on Design System */
+        .fade-slide-up {
+            animation: fadeSlideUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+
+        @keyframes fadeSlideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Progress Bar Stripe (Mana/HP style) */
+        .progress-stripe {
+            background-image: linear-gradient(
+                45deg,
+                rgba(255, 255, 255, 0.2) 25%,
+                transparent 25%,
+                transparent 50%,
+                rgba(255, 255, 255, 0.2) 50%,
+                rgba(255, 255, 255, 0.2) 75%,
+                transparent 75%,
+                transparent
+            );
+            background-size: 20px 20px;
+            animation: moveStripe 2s linear infinite;
+        }
+
+        @keyframes moveStripe {
+            from { background-position: 0 0; }
+            to { background-position: 40px 0; }
+        }
+
+        /* Cloud Background Effect */
+        .bg-clouds {
+    background:
+        radial-gradient(circle at 20% 30%, #dee0ff 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, #ffd9e5 0%, transparent 50%);
+    background-color: #fbf8ff;
+}
+
+        /* Sticker Shadow Utility */
+        .shadow-sticker {
+            box-shadow: 4px 4px 0px 0px rgba(64,84,192,0.15);
+        }
+        
+        .shadow-sticker-sm {
+            box-shadow: 2px 2px 0px 0px rgba(64,84,192,0.15);
+        }
+        html, body {
+    background-color: #fbf8ff !important;
+}
+
+body {
+    background:
+        radial-gradient(circle at 20% 30%, rgba(222, 224, 255, 0.75) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(255, 217, 229, 0.75) 0%, transparent 50%) !important;
+    background-attachment: fixed !important;
+}
+    </style>
+</head>
+<body style="background: #ffd9e5 !important;">
+<!-- TopNavBar -->
+<header class="bg-white/90 backdrop-blur-xl docked full-width top-0 sticky z-50 shadow-[4px_4px_0px_0px_rgba(64,84,192,0.15)]">
+<div class="flex justify-between items-center w-full px-container-margin py-4 max-w-7xl mx-auto">
+<div class="flex items-center gap-4">
+<span class="text-headline-md font-headline-md text-primary tracking-tight">Nathaly</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant pb-1 text-label-md font-label-md hover:scale-105 hover:text-secondary transition-all duration-300" href="../home_nathaly_portfolio_colorful/code.html">Home</a>
+<a class="text-on-surface-variant pb-1 text-label-md font-label-md hover:scale-105 hover:text-secondary transition-all duration-300" href="../hobbies_gaming_anime_colorful/code.html">Hobbies</a>
+<a class="text-primary border-b-2 border-primary pb-1 text-label-md font-label-md active:scale-95 transition-transform duration-200" href="../music_peace_worship_colorful/code.html">Music</a>
+<a class="text-on-surface-variant pb-1 text-label-md font-label-md hover:scale-105 hover:text-secondary transition-all duration-300" href="../polyglot_my_languages_colorful/code.html">Polyglot</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="text-primary hover:scale-105 hover:text-secondary transition-all duration-300 flex items-center justify-center w-10 h-10 rounded-full bg-surface-container">
+<span class="material-symbols-outlined" data-icon="palette">palette</span>
+</button>
+<button class="text-primary hover:scale-105 hover:text-secondary transition-all duration-300 flex items-center justify-center w-10 h-10 rounded-full bg-surface-container">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary bg-surface shadow-sticker-sm">
+<img alt="Anime Avatar" class="w-full h-full object-cover" data-alt="A small, soft pastel-colored anime style avatar illustration of a young creative persona, with subtle glowing highlights, set against a pristine white background. Modern Kawaii style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTqtx5oXFttR_Te9Ljn2DxxnGbvaP4bbhcR1UT2XSpid-4RmXks7EyAnPAifrp4bs-KH9TFmakVhe8EpNDe33qajNNgI0ZBVFSLqqr3h3iONP3ubKZjXloofis9VidCKb7UkQf_gzs4yjzOQ7_mlYsgAijim8Jkd0Tb7lWRTdCr0ouDXZz8PyaYBowLn8pGfAXuGGSfVqm4KYhJOTNuiNoOPtRN1HOcYg390Iz-J_6-0tIiwBOC9ws">
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow w-full max-w-7xl mx-auto px-container-margin py-12 flex flex-col gap-12">
+<!-- Hero Quote -->
+<section class="text-center fade-slide-up max-w-2xl mx-auto pt-8">
+<h1 class="text-[48px] md:text-[48px] font-display-lg md:font-['Plus_Jakarta_Sans'] text-[#4054c0] mb-4 leading-tight">
+                "Finding peace <br> <span class="text-secondary">in every melody."</span>
+</h1>
+<p class="text-[18px] font-['Be_Vietnam_Pro'] text-on-surface-variant">A curated space for Christian music, worship, and serene soundscapes.</p>
+</section>
+<!-- Bento Grid Layout -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-gutter fade-slide-up delay-100">
+<!-- Music Player Widget (Main Focus) -->
+<div class="md:col-span-7 bg-white rounded-xl p-8 shadow-sticker border-2 border-surface-variant flex flex-col relative overflow-hidden group">
+<!-- Level Badge Accent -->
+<div class="absolute top-4 right-4 bg-tertiary-fixed text-on-tertiary-fixed px-3 py-1 rounded-full text-label-md font-label-md shadow-sm">
+                    Vol. 1
+                </div>
+<div class="flex flex-col md:flex-row gap-8 items-center md:items-start h-full">
+<!-- Album Art -->
+<div class="w-48 h-48 md:w-64 md:h-64 rounded-xl overflow-hidden shadow-sticker-sm border border-outline-variant flex-shrink-0 relative">
+<img alt="Album Cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="A serene, soft-focus illustration of clouds parting to reveal a gentle light, rendered in pastel blues, lavenders, and whites. The style is Modern Kawaii with a comforting, spiritual, and ethereal mood. Subtle sticker-like border." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyMhlXE7MIyv56ActQGNhrN5_gb_x5gGLd_FM4MZzYgJsWkdj4FlpxMoST5kJfjc4Vpo8pbaNUxHhlr9jyKnY7pAib9Kv58YzPF8-mXKVVY79sk17ADKYKPIpt1UayRAAsZDsaLkh-R4SyLh2kpHtHhmfHDwdsyREg5cKfnosSg6CLx6Md5tCMp5vUma2CFRf98BA_V2AikHBLSMMB25GylkbIvgnV_-2QPMPOmiZvZ06zK-VWGPbu">
+<!-- Playing Indicator Overlay -->
+<div class="absolute inset-0 bg-primary/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<div class="w-12 h-12 rounded-full bg-surface/80 backdrop-blur-sm flex items-center justify-center shadow-md">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="graphic_eq" data-weight="fill">graphic_eq</span>
+</div>
+</div>
+</div>
+<!-- Player Controls & Info -->
+<div class="flex flex-col justify-center flex-grow w-full h-full">
+<div class="mb-2">
+<span class="inline-block bg-primary-fixed text-on-primary-fixed px-2 py-1 rounded-md text-label-sm font-label-sm mb-2">Now Playing</span>
+<h2 class="text-headline-md font-headline-md text-on-surface">Oceans (Where Feet May Fail)</h2>
+<p class="text-body-lg font-body-lg text-primary mt-1">Peace &amp; Worship Collective</p>
+</div>
+<!-- Progress Bar (HP Bar Style) -->
+<div class="mt-6 mb-4">
+<div class="flex justify-between text-label-sm font-label-sm text-on-surface-variant mb-2">
+<span class="">02:14</span>
+<span class="">08:55</span>
+</div>
+<div class="w-full h-4 bg-surface-container rounded-full overflow-hidden border border-outline-variant/30 shadow-inner">
+<div class="h-full bg-[#fd92c0] progress-stripe w-[35%] rounded-full transition-all duration-1000 ease-linear relative">
+<!-- Sparkle element at end of progress -->
+<div class="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-4 bg-white/50 rounded-full blur-[1px]"></div>
+</div>
+</div>
+</div>
+<!-- Controls -->
+<div class="flex items-center justify-between w-full mt-auto pt-4">
+<button class="text-on-surface-variant hover:text-primary transition-colors p-2 rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined text-2xl" data-icon="shuffle">shuffle</span>
+</button>
+<div class="flex items-center gap-4">
+<button class="text-[#4054c0] hover:scale-110 hover:text-secondary transition-all duration-200 w-12 h-12 flex items-center justify-center rounded-full bg-white shadow-sm border border-surface-variant">
+<span class="material-symbols-outlined text-2xl" data-icon="skip_previous" data-weight="fill">skip_previous</span>
+</button>
+<button style="background-color: #4054c0 !important; color: #ffffff !important;" class="hover:scale-105 transition-all duration-300 w-16 h-16 flex items-center justify-center rounded-full shadow-sticker group/play relative">
+<span class="material-symbols-outlined text-4xl" data-icon="pause" data-weight="fill">pause</span>
+<!-- Interactive Sparkle on Hover -->
+<span class="material-symbols-outlined absolute -top-2 -right-2 text-secondary opacity-0 group-hover/play:opacity-100 transition-opacity text-sm rotate-12" data-icon="sparkles">arrow_back_ios_new</span>
+</button>
+<button class="text-[#4054c0] hover:scale-110 hover:text-secondary transition-all duration-200 w-12 h-12 flex items-center justify-center rounded-full bg-white shadow-sm border border-surface-variant">
+<span class="material-symbols-outlined text-2xl" data-icon="skip_next" data-weight="fill">skip_next</span>
+</button>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors p-2 rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined text-2xl" data-icon="repeat">repeat</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Up Next / Playlist -->
+<div class="md:col-span-5 bg-white rounded-xl p-6 shadow-sticker-sm border border-surface-variant flex flex-col">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-body-lg font-body-lg font-bold text-on-surface">Up Next</h3>
+<button class="text-label-md font-label-md text-[#4054c0] hover:underline underline-offset-2">
+    View All
+</button>
+</div>
+<div class="flex flex-col gap-3 overflow-y-auto pr-2 flex-grow" style="max-height: 320px;">
+<!-- Playlist Item 1 (Active) -->
+<div class="flex items-center gap-4 p-3 rounded-lg bg-[#dee0ff]/30 border border-[#4054c0]/20 cursor-pointer hover:bg-primary-fixed/50 transition-colors">
+<div class="w-12 h-12 rounded-DEFAULT bg-surface flex items-center justify-center flex-shrink-0 relative">
+<img alt="Track thumbnail" class="w-full h-full object-cover rounded-DEFAULT opacity-50" data-alt="A tiny, stylized illustration of a glowing candle against a dark blue background. Minimalist Kawaii aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFCojrcVQMiHcDRXgICMWnGdXdfEDIpOWT0KSqFG_VFvdPmXJVtAREA1nKdC4Ev2tFkoU4wIL6GmVyZfF0cN_BbtHHRfY1AgMW_hjxsLTG5_-VkZer5-vYWJtijN7iKNp56QC7OUi22FpFCMU4c1yXQFS3SjBwIYSII_mgo1KJlsHCbJRjsOtIdSeX5eHkUTHX_OkzoAa1MBLBlw-uxj5ekHs0QGqQeQOWq5VZunkeC5yaWU7hIhuz">
+<span class="material-symbols-outlined absolute text-primary" data-icon="volume_up">volume_up</span>
+</div>
+<div class="flex-grow overflow-hidden">
+<h4 class="text-body-md font-body-md font-medium text-on-surface truncate">Oceans (Where Feet May Fail)</h4>
+<p class="text-label-sm font-label-sm text-primary truncate mt-1">Peace &amp; Worship</p>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant">08:55</span>
+</div>
+<!-- Playlist Item 2 -->
+<div class="flex items-center gap-4 p-3 rounded-lg bg-transparent border border-transparent hover:bg-surface-container hover:border-surface-variant cursor-pointer transition-colors">
+<div class="w-12 h-12 rounded-DEFAULT bg-surface-variant flex-shrink-0 overflow-hidden">
+<img alt="Track thumbnail" class="w-full h-full object-cover" data-alt="A minimalist illustration of a lone tree on a hill during dawn, soft peach and lavender sky. High fidelity soft style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbl0hQfbzjWrkKyjUP78XKNxhQS-nhgKiyZtT40aUx3M4IpX7fA06Rlso5ITtOLBwp7xexFu2bPiLO7USqAlewZSV11EsV21OXT0iJt2GUNYpcscpxMPzTW3QmLidvxwVX5i5TjHoIQpKGY7uV1bIV7WDubM0ibq4QWMnrqjIBP8z-mX0XrpEZTxV1nvSYfvbosgckmRc612FBytEEf1mNXoMoBFaymnuP2l2gdWqIw4oMY6D7HonN">
+</div>
+<div class="flex-grow overflow-hidden">
+<h4 class="text-body-md font-body-md text-on-surface truncate">Way Maker</h4>
+<p class="text-label-sm font-label-sm text-on-surface-variant truncate mt-1">Instrumental Sessions</p>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant">05:32</span>
+</div>
+<!-- Playlist Item 3 -->
+<div class="flex items-center gap-4 p-3 rounded-lg bg-transparent border border-transparent hover:bg-surface-container hover:border-surface-variant cursor-pointer transition-colors">
+<div class="w-12 h-12 rounded-DEFAULT bg-surface-variant flex-shrink-0 overflow-hidden">
+<img alt="Track thumbnail" class="w-full h-full object-cover" data-alt="A soft vector art representation of calm water ripples reflecting a pale moon, using mint and cream tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZ4xra_8MTdZH5OmOybQr7bUar5mdpfWwh20s2dGZixkghx7oL7Dq953Qqlz61DjYfLiibK0l-rP-DOAEZ0aKITi6Mk0icbY_QcUmTvmwXBMVDRosTXXlMOAdPUphICaEuDBnAm9TvE7m5RQ-S3ZPw4jIsw_KAz1jx0LvLYcbNqkDjJ9HepXb-AZnMYwzuFe1t2XP2QjYqJ6r4qHxgVJyobn1YZSAgs-2l0HFh1bKmRWa2yi3S8Bzp">
+</div>
+<div class="flex-grow overflow-hidden">
+<h4 class="text-body-md font-body-md text-on-surface truncate">It Is Well With My Soul</h4>
+<p class="text-label-sm font-label-sm text-on-surface-variant truncate mt-1">Acoustic Serenity</p>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant">04:18</span>
+</div>
+<!-- Playlist Item 4 -->
+<div class="flex items-center gap-4 p-3 rounded-lg bg-transparent border border-transparent hover:bg-surface-container hover:border-surface-variant cursor-pointer transition-colors">
+<div class="w-12 h-12 rounded-DEFAULT bg-surface-variant flex-shrink-0 overflow-hidden">
+<img alt="Track thumbnail" class="w-full h-full object-cover" data-alt="A serene, pixel-art inspired sun rising over subtle mountains in pastel colors. Modern minimal." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxBv3t2lFNFzCG39pbglnfLkLVTCQEbo5oUoFDHDbsmnnJw6nFhH8M_eE0cwZ-VVdgRqOUjBUz8foIwYRdKgqPP7UcE4nR_LScJr04iaq3CFBTeBuSzVtCAiwdnQiW_rjlDPHBqNfGUYnGi0LxgQkYpltxXdUqvY207HesqpwYd9znIBL-OZ_9WEln6SM99whS-EXzBPC5Ruacg44VqvBnpuvt6-3OeSO6w_dbJtxHuaOo77SQDAoa">
+</div>
+<div class="flex-grow overflow-hidden">
+<h4 class="text-body-md font-body-md text-on-surface truncate">Goodness of God</h4>
+<p class="text-label-sm font-label-sm text-on-surface-variant truncate mt-1">Peace &amp; Worship</p>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant">04:56</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Mood Selection (Chips) -->
+<section class="fade-slide-up delay-200 mt-8">
+<h3 class="text-headline-md font-headline-md text-on-surface mb-6 text-center md:text-left">Explore Moods</h3>
+<div class="flex flex-wrap gap-4 justify-center md:justify-start">
+<button class="bg-[#4054c0] text-on-primary px-6 py-3 rounded-full text-body-md font-body-md shadow-md hover:scale-105 transition-transform flex items-center gap-2">
+    <span class="material-symbols-outlined text-sm" data-icon="self_improvement">self_improvement</span>
+    Deep Peace
+</button>
+<button class="bg-white text-on-surface border-2 border-surface-variant px-6 py-3 rounded-full text-body-md font-body-md hover:bg-surface-container hover:border-primary/50 transition-all shadow-sm">
+                    Acoustic Worship
+                </button>
+<button class="bg-white text-on-surface border-2 border-surface-variant px-6 py-3 rounded-full text-body-md font-body-md hover:bg-surface-container hover:border-primary/50 transition-all shadow-sm">
+                    Instrumental Calm
+                </button>
+<button class="bg-white text-on-surface border-2 border-surface-variant px-6 py-3 rounded-full text-body-md font-body-md hover:bg-surface-container hover:border-primary/50 transition-all shadow-sm">
+                    Morning Devotion
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#efedf6] border-t-4 border-[#dee0ff] full-width mt-16 transition-opacity duration-200 shadow-inner">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-container-margin md:px-stack-gap-lg py-12 max-w-7xl mx-auto gap-gutter">
+
+<div class="text-headline-md font-headline-md text-[#983f69] bg-[#ffd9e5] px-4 py-2 rounded-lg border border-[#983f69]">
+    Nathaly
+</div>
+
+<div class="text-body-md font-body-md text-[#454653] text-center md:text-left">
+    © 2024 Nathaly Portfolio • Made with soft vibes
+</div>
+
+<ul class="flex flex-wrap gap-6 justify-center text-label-sm font-label-sm">
+
+<li>
+<a class="text-[#4054c0] hover:text-[#983f69] bg-[#dee0ff] hover:bg-[#ffd9e5] px-3 py-1 rounded-full transition-all duration-300 border border-transparent hover:border-[#983f69]" href="#">
+    Privacy
+</a>
+</li>
+
+<li>
+<a class="text-[#4054c0] hover:text-[#983f69] bg-[#dee0ff] hover:bg-[#ffd9e5] px-3 py-1 rounded-full transition-all duration-300 border border-transparent hover:border-[#983f69]" href="#">
+    Terms
+</a>
+</li>
+
+<li>
+<a class="text-[#4054c0] hover:text-[#983f69] bg-[#dee0ff] hover:bg-[#ffd9e5] px-3 py-1 rounded-full transition-all duration-300 border border-transparent hover:border-[#983f69]" href="#">
+    Language: JP/CN/EN
+</a>
+</li>
+
+</ul>
+</div>
+</footer>
+
+
+</body></html>
