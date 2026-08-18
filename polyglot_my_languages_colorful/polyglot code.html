@@ -1,4 +1,4 @@
-<!DOCTYPE html><html class="scroll-smooth" lang="en" style=""><head>
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>Hikari Portfolio - Polyglot</title>
@@ -249,10 +249,6 @@
 .spanish-card div {
     color: #243AA7 !important;
 }
-
-.spanish-card .bg-primary {
-    color: #ffffff !important;
-}
     </style>
 </head>
 <body class="antialiased min-h-screen flex flex-col font-body-md text-body-md overflow-x-hidden" style="background-color: rgb(255, 217, 229);">
@@ -304,7 +300,7 @@
 <!-- Bento Grid Layout for Languages -->
 <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-24">
 <!-- Spanish Card - Native (Large Feature) -->
-<article class="spanish-card col-span-1 md:col-span-8 bg-[#C9D2FF] rounded-[2rem] p-8 md:p-12 shadow-sticker border border-primary-container relative overflow-hidden animate-fade-slide-up group flex flex-col justify-between min-h-[360px]">
+<article class="spanish-card col-span-1 md:col-span-8 bg-[#EAF0FF] rounded-[2rem] p-8 md:p-12 shadow-sticker border border-primary-container relative overflow-hidden animate-fade-slide-up group flex flex-col justify-between min-h-[360px]">
 <!-- Decorative background elements -->
 <div class="absolute -bottom-20 -right-20 w-64 h-64 bg-primary-container/40 rounded-full blur-3xl group-hover:bg-primary-container/60 transition-colors duration-500"></div>
 <div class="absolute top-8 right-8 w-12 h-12 flex items-center justify-center bg-surface-container rounded-full rotate-12 group-hover:rotate-0 transition-transform duration-300">
@@ -325,7 +321,7 @@
 <span class="text-primary font-bold">100% (Native)</span>
 </div>
 <div class="w-full h-4 bg-surface-container-high rounded-full overflow-hidden border border-outline-variant/30">
-<div class="h-full bg-primary bg-pattern-stripes w-full rounded-full"></div>
+    <div class="h-full bg-[#8FA3F5] bg-pattern-stripes w-full rounded-full"></div>
 </div>
 </div>
 </article>
@@ -353,7 +349,7 @@
 <span class="">Lvl. 85</span>
 </div>
 <div class="w-full h-4 bg-surface-container-high rounded-full overflow-hidden border border-outline-variant/30">
-<div class="h-full bg-primary bg-pattern-stripes w-[85%] rounded-full"></div>
+    <div class="h-full bg-[#9B86D9] bg-pattern-stripes w-[85%] rounded-full"></div>
 </div>
 </div>
 </article>
@@ -441,26 +437,51 @@
     你好 (ZH)
 </span>
 </div>
-<form class="max-w-md mx-auto text-left space-y-6">
-<div>
-<label class="block text-label-sm font-label-sm text-black mb-2 ml-4 uppercase tracking-wider" for="email">
-    Email Address
-</label>
-<input class="w-full bg-[#EAF3F8] border-2 border-[#C8DCE8] rounded-2xl px-6 py-4 text-body-md font-body-md text-black focus:border-[#2F5D8C] focus:ring-0 transition-colors shadow-sm cursor-text" id="email" placeholder="your@email.com" type="email">
-</div>
-<div>
-<label class="block text-label-sm font-label-sm text-black mb-2 ml-4 uppercase tracking-wider" for="message">
-    Message
-</label>
-<textarea class="w-full bg-[#EAF3F8] border-2 border-[#C8DCE8] rounded-2xl px-6 py-4 text-body-md font-body-md text-black focus:border-[#2F5D8C] focus:ring-0 transition-colors shadow-sm resize-none" id="message" placeholder="Konnichiwa..." rows="4"></textarea>
-</div>
-<button class="w-full bg-[#2F5D8C] hover:bg-[#244A70] text-white rounded-2xl py-4 text-body-lg font-headline-md transition-all duration-300 hover:scale-[1.02] active:scale-95 shadow-md sparkle-container flex items-center justify-center gap-2" type="button">
-    Send Message
-    <span class="material-symbols-outlined text-[20px] text-white" style="font-variation-settings: &quot;FILL&quot; 1;">
-        send
-    </span>
-<div class="sparkle -top-2 right-1/4"></div>
-</button>
+<form action="https://formspree.io/f/xdenpawj" method="POST" class="max-w-md mx-auto text-left space-y-6">
+
+    <div>
+        <label class="block text-label-sm font-label-sm text-black mb-2 ml-4 uppercase tracking-wider" for="email">
+            Email Address
+        </label>
+
+        <input
+            class="w-full bg-[#EAF3F8] border-2 border-[#C8DCE8] rounded-2xl px-6 py-4 text-body-md font-body-md text-black focus:border-[#2F5D8C] focus:ring-0 transition-colors shadow-sm cursor-text"
+            id="email"
+            name="email"
+            placeholder="your@email.com"
+            type="email"
+            required
+        >
+    </div>
+
+    <div>
+        <label class="block text-label-sm font-label-sm text-black mb-2 ml-4 uppercase tracking-wider" for="message">
+            Message
+        </label>
+
+        <textarea
+            class="w-full bg-[#EAF3F8] border-2 border-[#C8DCE8] rounded-2xl px-6 py-4 text-body-md font-body-md text-black focus:border-[#2F5D8C] focus:ring-0 transition-colors shadow-sm resize-none"
+            id="message"
+            name="message"
+            placeholder="Konnichiwa..."
+            rows="4"
+            required
+        ></textarea>
+    </div>
+
+    <button
+        class="w-full bg-[#2F5D8C] hover:bg-[#244A70] text-white rounded-2xl py-4 text-body-lg font-headline-md transition-all duration-300 hover:scale-[1.02] active:scale-95 shadow-md sparkle-container flex items-center justify-center gap-2"
+        type="submit"
+    >
+        Send Message
+
+        <span class="material-symbols-outlined text-[20px] text-white" style="font-variation-settings: &quot;FILL&quot; 1;">
+            send
+        </span>
+
+        <div class="sparkle -top-2 right-1/4"></div>
+    </button>
+
 </form>
 </section>
 </main>
