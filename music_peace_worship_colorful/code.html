@@ -302,7 +302,7 @@ body {
 <!-- Player Controls & Info -->
 <div class="flex flex-col justify-center flex-grow w-full h-full">
 <div class="mb-2">
-<span class="inline-block bg-primary-fixed text-on-primary-fixed px-2 py-1 rounded-md text-label-sm font-label-sm mb-2">Now Playing</span>
+<span id="now-playing-badge" class="inline-block bg-primary-fixed text-on-primary-fixed px-2 py-1 rounded-md text-label-sm font-label-sm mb-2">Now Playing</span>
 <h2 class="text-headline-md font-headline-md text-on-surface">Oceans (Where Feet May Fail)</h2>
 <p class="text-body-lg font-body-lg text-primary mt-1">Peace &amp; Worship Collective</p>
 </div>
@@ -346,79 +346,150 @@ body {
 </div>
 <!-- Up Next / Playlist -->
 <div class="md:col-span-5 bg-white rounded-xl p-6 shadow-sticker-sm border border-surface-variant flex flex-col">
-<div class="flex justify-between items-center mb-6">
-<h3 class="text-body-lg font-body-lg font-bold text-on-surface">Up Next</h3>
-<button class="text-label-md font-label-md text-[#4054c0] hover:underline underline-offset-2">
-    View All
-</button>
-</div>
-<div class="flex flex-col gap-3 overflow-y-auto pr-2 flex-grow" style="max-height: 320px;">
-<!-- Playlist Item 1 (Active) -->
-<div class="flex items-center gap-4 p-3 rounded-lg bg-[#dee0ff]/30 border border-[#4054c0]/20 cursor-pointer hover:bg-primary-fixed/50 transition-colors">
-<div class="w-12 h-12 rounded-DEFAULT bg-surface flex items-center justify-center flex-shrink-0 relative">
-<img alt="Track thumbnail" class="w-full h-full object-cover rounded-DEFAULT opacity-50" data-alt="A tiny, stylized illustration of a glowing candle against a dark blue background. Minimalist Kawaii aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFCojrcVQMiHcDRXgICMWnGdXdfEDIpOWT0KSqFG_VFvdPmXJVtAREA1nKdC4Ev2tFkoU4wIL6GmVyZfF0cN_BbtHHRfY1AgMW_hjxsLTG5_-VkZer5-vYWJtijN7iKNp56QC7OUi22FpFCMU4c1yXQFS3SjBwIYSII_mgo1KJlsHCbJRjsOtIdSeX5eHkUTHX_OkzoAa1MBLBlw-uxj5ekHs0QGqQeQOWq5VZunkeC5yaWU7hIhuz">
-<span class="material-symbols-outlined absolute text-primary" data-icon="volume_up">volume_up</span>
-</div>
-<div class="flex-grow overflow-hidden">
-<h4 class="text-body-md font-body-md font-medium text-on-surface truncate">Oceans (Where Feet May Fail)</h4>
-<p class="text-label-sm font-label-sm text-primary truncate mt-1">Peace &amp; Worship</p>
-</div>
-<span class="text-label-sm font-label-sm text-on-surface-variant">08:55</span>
-</div>
-<!-- Playlist Item 2 -->
-<div class="flex items-center gap-4 p-3 rounded-lg bg-transparent border border-transparent hover:bg-surface-container hover:border-surface-variant cursor-pointer transition-colors">
-<div class="w-12 h-12 rounded-DEFAULT bg-surface-variant flex-shrink-0 overflow-hidden">
-<img alt="Track thumbnail" class="w-full h-full object-cover" data-alt="A minimalist illustration of a lone tree on a hill during dawn, soft peach and lavender sky. High fidelity soft style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbl0hQfbzjWrkKyjUP78XKNxhQS-nhgKiyZtT40aUx3M4IpX7fA06Rlso5ITtOLBwp7xexFu2bPiLO7USqAlewZSV11EsV21OXT0iJt2GUNYpcscpxMPzTW3QmLidvxwVX5i5TjHoIQpKGY7uV1bIV7WDubM0ibq4QWMnrqjIBP8z-mX0XrpEZTxV1nvSYfvbosgckmRc612FBytEEf1mNXoMoBFaymnuP2l2gdWqIw4oMY6D7HonN">
-</div>
-<div class="flex-grow overflow-hidden">
-<h4 class="text-body-md font-body-md text-on-surface truncate">Way Maker</h4>
-<p class="text-label-sm font-label-sm text-on-surface-variant truncate mt-1">Instrumental Sessions</p>
-</div>
-<span class="text-label-sm font-label-sm text-on-surface-variant">05:32</span>
-</div>
-<!-- Playlist Item 3 -->
-<div class="flex items-center gap-4 p-3 rounded-lg bg-transparent border border-transparent hover:bg-surface-container hover:border-surface-variant cursor-pointer transition-colors">
-<div class="w-12 h-12 rounded-DEFAULT bg-surface-variant flex-shrink-0 overflow-hidden">
-<img alt="Track thumbnail" class="w-full h-full object-cover" data-alt="A soft vector art representation of calm water ripples reflecting a pale moon, using mint and cream tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZ4xra_8MTdZH5OmOybQr7bUar5mdpfWwh20s2dGZixkghx7oL7Dq953Qqlz61DjYfLiibK0l-rP-DOAEZ0aKITi6Mk0icbY_QcUmTvmwXBMVDRosTXXlMOAdPUphICaEuDBnAm9TvE7m5RQ-S3ZPw4jIsw_KAz1jx0LvLYcbNqkDjJ9HepXb-AZnMYwzuFe1t2XP2QjYqJ6r4qHxgVJyobn1YZSAgs-2l0HFh1bKmRWa2yi3S8Bzp">
-</div>
-<div class="flex-grow overflow-hidden">
-<h4 class="text-body-md font-body-md text-on-surface truncate">It Is Well With My Soul</h4>
-<p class="text-label-sm font-label-sm text-on-surface-variant truncate mt-1">Acoustic Serenity</p>
-</div>
-<span class="text-label-sm font-label-sm text-on-surface-variant">04:18</span>
-</div>
-<!-- Playlist Item 4 -->
-<div class="flex items-center gap-4 p-3 rounded-lg bg-transparent border border-transparent hover:bg-surface-container hover:border-surface-variant cursor-pointer transition-colors">
-<div class="w-12 h-12 rounded-DEFAULT bg-surface-variant flex-shrink-0 overflow-hidden">
-<img alt="Track thumbnail" class="w-full h-full object-cover" data-alt="A serene, pixel-art inspired sun rising over subtle mountains in pastel colors. Modern minimal." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxBv3t2lFNFzCG39pbglnfLkLVTCQEbo5oUoFDHDbsmnnJw6nFhH8M_eE0cwZ-VVdgRqOUjBUz8foIwYRdKgqPP7UcE4nR_LScJr04iaq3CFBTeBuSzVtCAiwdnQiW_rjlDPHBqNfGUYnGi0LxgQkYpltxXdUqvY207HesqpwYd9znIBL-OZ_9WEln6SM99whS-EXzBPC5Ruacg44VqvBnpuvt6-3OeSO6w_dbJtxHuaOo77SQDAoa">
-</div>
-<div class="flex-grow overflow-hidden">
-<h4 class="text-body-md font-body-md text-on-surface truncate">Goodness of God</h4>
-<p class="text-label-sm font-label-sm text-on-surface-variant truncate mt-1">Peace &amp; Worship</p>
-</div>
-<span class="text-label-sm font-label-sm text-on-surface-variant">04:56</span>
-</div>
+    <div class="flex justify-between items-center mb-6">
+        <h3 class="text-body-lg font-body-lg font-bold text-on-surface">Up Next</h3>
+
+        <button class="text-label-md font-label-md text-[#4054c0] hover:underline underline-offset-2">
+            View All
+        </button>
+    </div>
+
+    <div id="playlist" class="flex flex-col gap-3 overflow-y-auto pr-2 flex-grow" style="max-height: 320px;">
+
+        <!-- SONG 1: OCEANS -->
+        <div
+            class="playlist-item flex items-center gap-4 p-3 rounded-lg cursor-pointer transition-colors"
+            data-track="0"
+        >
+            <div class="w-12 h-12 rounded-DEFAULT bg-surface flex items-center justify-center flex-shrink-0 relative overflow-hidden">
+                <img
+                    alt="Track thumbnail"
+                    class="w-full h-full object-cover rounded-DEFAULT opacity-50"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFCojrcVQMiHcDRXgICMWnGdXdfEDIpOWT0KSqFG_VFvdPmXJVtAREA1nKdC4Ev2tFkoU4wIL6GmVyZfF0cN_BbtHHRfY1AgMW_hjxsLTG5_-VkZer5-vYWJtijN7iKNp56QC7OUi22FpFCMU4c1yXQFS3SjBwIYSII_mgo1KJlsHCbJRjsOtIdSeX5eHkUTHX_OkzoAa1MBLBlw-uxj5ekHs0QGqQeQOWq5VZunkeC5yaWU7hIhuz"
+                >
+                <span class="playlist-icon material-symbols-outlined absolute text-primary hidden">
+                    volume_up
+                </span>
+            </div>
+
+            <div class="flex-grow overflow-hidden">
+                <h4 class="text-body-md font-body-md font-medium text-on-surface truncate">
+                    Oceans (Where Feet May Fail)
+                </h4>
+                <p class="text-label-sm font-label-sm text-primary truncate mt-1">
+                    Peace &amp; Worship
+                </p>
+            </div>
+
+            <span class="text-label-sm font-label-sm text-on-surface-variant">
+                08:55
+            </span>
+        </div>
+
+
+        <!-- SONG 2: WAY MAKER -->
+        <div
+            class="playlist-item flex items-center gap-4 p-3 rounded-lg cursor-pointer transition-colors"
+            data-track="1"
+        >
+            <div class="w-12 h-12 rounded-DEFAULT bg-surface-variant flex-shrink-0 overflow-hidden relative">
+                <img
+                    alt="Track thumbnail"
+                    class="w-full h-full object-cover"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbl0hQfbzjWrkKyjUP78XKNxhQS-nhgKiyZtT40aUx3M4IpX7fA06Rlso5ITtOLBwp7xexFu2bPiLO7USqAlewZSV11EsV21OXT0iJt2GUNYpcscpxMPzTW3QmLidvxwVX5i5TjHoIQpKGY7uV1bIV7WDubM0ibq4QWMnrqjIBP8z-mX0XrpEZTxV1nvSYfvbosgckmRc612FBytEEf1mNXoMoBFaymnuP2l2gdWqIw4oMY6D7HonN"
+                >
+                <span class="playlist-icon material-symbols-outlined absolute text-primary hidden">
+                    volume_up
+                </span>
+            </div>
+
+            <div class="flex-grow overflow-hidden">
+                <h4 class="text-body-md font-body-md text-on-surface truncate">
+                    Way Maker
+                </h4>
+                <p class="text-label-sm font-label-sm text-on-surface-variant truncate mt-1">
+                    Instrumental Sessions
+                </p>
+            </div>
+
+            <span class="text-label-sm font-label-sm text-on-surface-variant">
+                05:32
+            </span>
+        </div>
+
+
+        <!-- SONG 3: IT IS WELL -->
+        <div
+            class="playlist-item flex items-center gap-4 p-3 rounded-lg cursor-pointer transition-colors"
+            data-track="2"
+        >
+            <div class="w-12 h-12 rounded-DEFAULT bg-surface-variant flex-shrink-0 overflow-hidden relative">
+                <img
+                    alt="Track thumbnail"
+                    class="w-full h-full object-cover"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZ4xra_8MTdZH5OmOybQr7bUar5mdpfWwh20s2dGZixkghx7oL7Dq953Qqlz61DjYfLiibK0l-rP-DOAEZ0aKITi6Mk0icbY_QcUmTvmwXBMVDRosTXXlMOAdPUphICaEuDBnAm9TvE7m5RQ-S3ZPw4jIsw_KAz1jx0LvLYcbNqkDjJ9HepXb-AZnMYwzuFe1t2XP2QjYqJ6r4qHxgVJyobn1YZSAgs-2l0HFh1bKmRWa2yi3S8Bzp"
+                >
+                <span class="playlist-icon material-symbols-outlined absolute text-primary hidden">
+                    volume_up
+                </span>
+            </div>
+
+            <div class="flex-grow overflow-hidden">
+                <h4 class="text-body-md font-body-md text-on-surface truncate">
+                    It Is Well With My Soul
+                </h4>
+                <p class="text-label-sm font-label-sm text-on-surface-variant truncate mt-1">
+                    Acoustic Serenity
+                </p>
+            </div>
+
+            <span class="text-label-sm font-label-sm text-on-surface-variant">
+                04:18
+            </span>
+        </div>
+
+
+        <!-- SONG 4: GOODNESS OF GOD -->
+        <div
+            class="playlist-item flex items-center gap-4 p-3 rounded-lg cursor-pointer transition-colors"
+            data-track="3"
+        >
+            <div class="w-12 h-12 rounded-DEFAULT bg-surface-variant flex-shrink-0 overflow-hidden relative">
+                <img
+                    alt="Track thumbnail"
+                    class="w-full h-full object-cover"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxBv3t2lFNFzCG39pbglnfLkLVTCQEbo5oUoFDHDbsmnnJw6nFhH8M_eE0cwZ-VVdgRqOUjBUz8foIwYRdKgqPP7UcE4nR_LScJr04iaq3CFBTeBuSzVtCAiwdnQiW_rjlDPHBqNfGUYnGi0LxgQkYpltxXdUqvY207HesqpwYd9znIBL-OZ_9WEln6SM99whS-EXzBPC5Ruacg44VqvBnpuvt6-3OeSO6w_dbJtxHuaOo77SQDAoa"
+                >
+                <span class="playlist-icon material-symbols-outlined absolute text-primary hidden">
+                    volume_up
+                </span>
+            </div>
+
+            <div class="flex-grow overflow-hidden">
+                <h4 class="text-body-md font-body-md text-on-surface truncate">
+                    Goodness of God
+                </h4>
+                <p class="text-label-sm font-label-sm text-on-surface-variant truncate mt-1">
+                    Peace &amp; Worship
+                </p>
+            </div>
+
+            <span class="text-label-sm font-label-sm text-on-surface-variant">
+                04:56
+            </span>
+        </div>
+
+    </div>
 </div>
 </div>
 </section>
 <!-- Mood Selection (Chips) -->
-<section class="fade-slide-up delay-200 mt-8">
-<h3 class="text-headline-md font-headline-md text-on-surface mb-6 text-center md:text-left">Explore Moods</h3>
-<div class="flex flex-wrap gap-4 justify-center md:justify-start">
-<button class="bg-[#4054c0] text-on-primary px-6 py-3 rounded-full text-body-md font-body-md shadow-md hover:scale-105 transition-transform flex items-center gap-2">
-    <span class="material-symbols-outlined text-sm" data-icon="self_improvement">self_improvement</span>
-    Deep Peace
-</button>
-<button class="bg-white text-on-surface border-2 border-surface-variant px-6 py-3 rounded-full text-body-md font-body-md hover:bg-surface-container hover:border-primary/50 transition-all shadow-sm">
-                    Acoustic Worship
-                </button>
-<button class="bg-white text-on-surface border-2 border-surface-variant px-6 py-3 rounded-full text-body-md font-body-md hover:bg-surface-container hover:border-primary/50 transition-all shadow-sm">
-                    Instrumental Calm
-                </button>
-<button class="bg-white text-on-surface border-2 border-surface-variant px-6 py-3 rounded-full text-body-md font-body-md hover:bg-surface-container hover:border-primary/50 transition-all shadow-sm">
-                    Morning Devotion
-                </button>
-</div>
+<section class="fade-slide-up delay-200 mt-8 flex justify-center">
+    <img
+        src="images/acoustic guitar.jpeg"
+        alt="Anime girl playing acoustic guitar"
+        class="w-full max-w-3xl rounded-xl shadow-sticker object-cover"
+    >
 </section>
 </main>
 <!-- Footer -->
@@ -456,6 +527,476 @@ body {
 </ul>
 </div>
 </footer>
+<script>
+const songs = [
+    {
+        title: "Oceans (Where Feet May Fail)",
+        artist: "Peace & Worship Collective",
+        file: "canciones/oceans.mp3",
+        startTime: 134
+    },
+    {
+        title: "Way Maker",
+        artist: "Instrumental Sessions",
+        file: "canciones/way maker.mp3",
+        startTime: 0
+    },
+    {
+        title: "It Is Well With My Soul",
+        artist: "Acoustic Serenity",
+        file: "canciones/it is well.mp3",
+        startTime: 0
+    },
+    {
+        title: "Goodness of God",
+        artist: "Peace & Worship",
+        file: "canciones/goodness of God.mp3",
+        startTime: 0
+    }
+];
+
+let currentSong = 0;
+let isPlaying = false;
+
+const audio = new Audio();
+
+const playButton = document.querySelector(".group\\/play");
+const playIcon = playButton
+    ? playButton.querySelector(".material-symbols-outlined")
+    : null;
+
+const progressBar = document.querySelector(".progress-stripe");
+const progressContainer = progressBar
+    ? progressBar.parentElement
+    : null;
+
+const timeContainer = document.querySelector(".mt-6.mb-4");
+
+const timeLabels = timeContainer
+    ? timeContainer.querySelectorAll(".flex.justify-between span")
+    : null;
+
+const currentTimeElement = timeLabels
+    ? timeLabels[0]
+    : null;
+
+const durationElement = timeLabels
+    ? timeLabels[1]
+    : null;
+
+const playerTitle = document.querySelector(".md\\:col-span-7 h2");
+
+const playerArtist = playerTitle
+    ? playerTitle.nextElementSibling
+    : null;
 
 
-</body></html>
+/* =========================
+   PLAYLIST
+========================= */
+
+const playlistItems = document.querySelectorAll(".playlist-item");
+
+function updateActivePlaylistItem(index) {
+
+    playlistItems.forEach((item, i) => {
+
+        const icon = item.querySelector(".playlist-icon");
+
+        if (i === index) {
+
+            item.classList.add("bg-[#dee0ff]/30");
+            item.classList.add("border");
+            item.classList.add("border-[#4054c0]/20");
+
+            item.classList.remove("bg-transparent");
+            item.classList.remove("border-transparent");
+
+            if (icon) {
+                icon.classList.remove("hidden");
+            }
+
+        } else {
+
+            item.classList.remove("bg-[#dee0ff]/30");
+            item.classList.remove("border");
+            item.classList.remove("border-[#4054c0]/20");
+
+            item.classList.add("bg-transparent");
+            item.classList.add("border-transparent");
+
+            if (icon) {
+                icon.classList.add("hidden");
+            }
+
+        }
+
+    });
+
+}
+
+
+/* =========================
+   FORMAT TIME
+========================= */
+
+function formatTime(seconds) {
+
+    if (!Number.isFinite(seconds)) {
+        return "00:00";
+    }
+
+    const minutes = Math.floor(seconds / 60);
+    const secondsLeft = Math.floor(seconds % 60);
+
+    return (
+        String(minutes).padStart(2, "0") +
+        ":" +
+        String(secondsLeft).padStart(2, "0")
+    );
+
+}
+
+
+/* =========================
+   UPDATE PLAYER INFORMATION
+========================= */
+
+function updatePlayerInfo() {
+
+    const song = songs[currentSong];
+
+    if (playerTitle) {
+        playerTitle.textContent = song.title;
+    }
+
+    const badge = document.getElementById("now-playing-badge");
+
+    if (badge) {
+        badge.textContent = "Now Playing";
+    }
+
+    if (playerArtist) {
+        playerArtist.textContent = song.artist;
+    }
+
+}
+
+
+/* =========================
+   UPDATE PROGRESS BAR
+========================= */
+
+function updateProgress() {
+
+    if (!audio.duration) {
+        return;
+    }
+
+    const percentage =
+        (audio.currentTime / audio.duration) * 100;
+
+    if (progressBar) {
+        progressBar.style.width = percentage + "%";
+    }
+
+    if (currentTimeElement) {
+        currentTimeElement.textContent =
+            formatTime(audio.currentTime);
+    }
+
+    if (durationElement) {
+        durationElement.textContent =
+            formatTime(audio.duration);
+    }
+
+}
+
+
+/* =========================
+   LOAD SONG
+========================= */
+
+function loadSong(index, autoPlay = false) {
+
+    currentSong = index;
+
+    const song = songs[currentSong];
+
+    audio.src = song.file;
+
+    audio.load();
+
+    updatePlayerInfo();
+
+    updateActivePlaylistItem(currentSong);
+
+    if (progressBar) {
+        progressBar.style.width = "0%";
+    }
+
+    if (currentTimeElement) {
+        currentTimeElement.textContent = "00:00";
+    }
+
+    if (durationElement) {
+        durationElement.textContent = "00:00";
+    }
+
+    audio.addEventListener(
+        "loadedmetadata",
+        function setStartTime() {
+
+            audio.currentTime = song.startTime;
+
+            updateProgress();
+
+            if (autoPlay) {
+                playSong();
+            }
+
+        },
+        { once: true }
+    );
+
+}
+
+
+/* =========================
+   PLAY
+========================= */
+
+function playSong() {
+
+    audio.play()
+        .then(() => {
+
+            isPlaying = true;
+
+            if (playIcon) {
+                playIcon.textContent = "pause";
+            }
+
+        })
+        .catch(() => {
+
+            isPlaying = false;
+
+            if (playIcon) {
+                playIcon.textContent = "play_arrow";
+            }
+
+        });
+
+}
+
+
+/* =========================
+   PAUSE
+========================= */
+
+function pauseSong() {
+
+    audio.pause();
+
+    isPlaying = false;
+
+    if (playIcon) {
+        playIcon.textContent = "play_arrow";
+    }
+
+}
+
+
+/* =========================
+   PLAY / PAUSE
+========================= */
+
+function togglePlay() {
+
+    if (isPlaying) {
+        pauseSong();
+    } else {
+        playSong();
+    }
+
+}
+
+
+/* =========================
+   NEXT SONG
+========================= */
+
+function nextSong() {
+
+    currentSong =
+        (currentSong + 1) % songs.length;
+
+    loadSong(currentSong, true);
+
+}
+
+
+/* =========================
+   PREVIOUS SONG
+========================= */
+
+function previousSong() {
+
+    if (audio.currentTime > 5) {
+
+        audio.currentTime = 0;
+
+        updateProgress();
+
+        return;
+    }
+
+    currentSong =
+        (currentSong - 1 + songs.length) %
+        songs.length;
+
+    loadSong(currentSong, true);
+
+}
+
+
+/* =========================
+   PLAY BUTTON
+========================= */
+
+if (playButton) {
+
+    playButton.addEventListener(
+        "click",
+        togglePlay
+    );
+
+}
+
+
+/* =========================
+   NEXT / PREVIOUS BUTTONS
+========================= */
+
+const allButtons =
+    document.querySelectorAll("button");
+
+allButtons.forEach(button => {
+
+    const icon =
+        button.querySelector(
+            ".material-symbols-outlined"
+        );
+
+    if (!icon) {
+        return;
+    }
+
+    const iconName =
+        icon.textContent.trim();
+
+    if (iconName === "skip_next") {
+
+        button.addEventListener(
+            "click",
+            nextSong
+        );
+
+    }
+
+    if (iconName === "skip_previous") {
+
+        button.addEventListener(
+            "click",
+            previousSong
+        );
+
+    }
+
+});
+
+
+/* =========================
+   PLAYLIST CLICK
+========================= */
+
+playlistItems.forEach(item => {
+
+    item.addEventListener(
+        "click",
+        () => {
+
+            const selectedTrack =
+                Number(item.dataset.track);
+
+            loadSong(selectedTrack, true);
+
+        }
+    );
+
+});
+
+
+/* =========================
+   CLICK PROGRESS BAR
+========================= */
+
+if (progressContainer) {
+
+    progressContainer.style.cursor =
+        "pointer";
+
+    progressContainer.addEventListener(
+        "click",
+        event => {
+
+            if (!audio.duration) {
+                return;
+            }
+
+            const rect =
+                progressContainer.getBoundingClientRect();
+
+            const clickPosition =
+                event.clientX - rect.left;
+
+            const percentage =
+                clickPosition / rect.width;
+
+            audio.currentTime =
+                percentage * audio.duration;
+
+            updateProgress();
+
+        }
+    );
+
+}
+
+
+/* =========================
+   AUDIO EVENTS
+========================= */
+
+audio.addEventListener(
+    "timeupdate",
+    updateProgress
+);
+
+audio.addEventListener(
+    "ended",
+    nextSong
+);
+
+
+/* =========================
+   INITIAL SONG
+========================= */
+
+loadSong(0, true);
+
+</script>
+
+</body>
+</html>
